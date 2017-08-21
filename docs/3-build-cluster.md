@@ -16,9 +16,7 @@ Navigate to the Azure Cloud portal: https://portal.azure.com
 
 For this workshop we will use the web-based terminal window, Azure Cloud Shell, to avoid differences between operating systems and personal configurations. 
 
-Open the Azure Cloud Shell
-
-![Cloud Shell](https://image.ibb.co/ccoxLF/cloudshell.png)
+Open the Azure Cloud Shell which is located on the top navigation bar with the following icon >_
 
 ## 2. Clone the Workshop Git Repository
 
