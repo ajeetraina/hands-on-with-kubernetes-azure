@@ -4,12 +4,12 @@ Kubernetes can restrict the amount of CPU and Memory that Pods or Containers can
 
 The revelvant Kubernetes documentation is found [here](https://kubernetes.io/docs/concepts/policy/resource-quotas/)
 
-These steps are to be executed in the Google Cloud Shell.
+These steps are to be executed in the Azure Cloud Shell.
 
 ## 1. Navigate to the Workshop Directory (if necessary)  
 
 ```
-cd hands-on-with-kubernetes-gke
+cd hands-on-with-kubernetes-azure
 ```
 
 ## 2. Execute the application service and deployment
@@ -29,9 +29,9 @@ You should now see:
 
 ```
 NAME                                   READY     STATUS    RESTARTS   AGE       IP               NODE
-resource-quota-demo-4067652524-01jh5   1/1       Running   0          41s       172.16.235.216   worker1
-resource-quota-demo-4067652524-72xxh   1/1       Running   0          41s       172.16.235.217   worker1
-resource-quota-demo-4067652524-wnhgn   1/1       Running   0          41s       172.16.235.218   worker1
+resource-quota-demo-4067652524-01jh5   1/1       Running   0          41s       172.16.235.216   k8s-agent-d7ca55cc-0
+resource-quota-demo-4067652524-72xxh   1/1       Running   0          41s       172.16.235.217   k8s-agent-d7ca55cc-0
+resource-quota-demo-4067652524-wnhgn   1/1       Running   0          41s       172.16.235.218   k8s-agent-d7ca55cc-0
 ```
 
 ## 4. List the Deployment
@@ -55,7 +55,7 @@ kubectl scale deployment resource-quota-demo --replicas=100
 
 ## 6. Check the Number of Pods in the Kubernetes Dashboard
 
-If you closed the Kuberentes Dashboard, follow the instructions to open Dashboard [here](https://github.com/apprenda/hands-on-with-kubernetes-gke/blob/master/docs/3-build-cluster.md)
+If you closed the Kuberentes Dashboard, follow the instructions to open Dashboard [here](https://github.com/apprenda/hands-on-with-kubernetes-azure/blob/master/docs/3-build-cluster.md)
 
 Now click on `Pods` from the left hand navigation menu.
 

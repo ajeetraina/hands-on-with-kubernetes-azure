@@ -2,12 +2,12 @@
 
 We will explore high availability of a workload after a failed deployment.  
 
-These steps are to be executed in the Google Cloud Shell.
+These steps are to be executed in the Azure Cloud Shell.
 
 ## 1. Navigate to the Workshop Directory (if necessary)  
 
 ```
-cd hands-on-with-kubernetes-gke
+cd hands-on-with-kubernetes-azure
 ```
 
 ## 2. Execute the Kubernetes Service and Healthy Deployment
@@ -29,14 +29,14 @@ You should now see something like this
 
 ```
 NAME                           READY     STATUS    RESTARTS   AGE       IP               NODE
-probes-demo-1216114202-fkbjn   0/1       Running   0          13s       172.16.235.211   worker1
-probes-demo-1216114202-jl08v   0/1       Running   0          13s       172.16.235.212   worker1
-probes-demo-1216114202-wv5jx   0/1       Running   0          13s       172.16.235.210   worker1
+probes-demo-1216114202-fkbjn   0/1       Running   0          13s       172.16.235.211   k8s-agent-d7ca55cc-0
+probes-demo-1216114202-jl08v   0/1       Running   0          13s       172.16.235.212   k8s-agent-d7ca55cc-0
+probes-demo-1216114202-wv5jx   0/1       Running   0          13s       172.16.235.210   k8s-agent-d7ca55cc-0
 ```
 
 ## 4. Browse to the Kubernetes Dashboard
 
-If you closed the Kuberentes Dashboard, follow the instructions to open Dashboard [here](https://github.com/apprenda/hands-on-with-kubernetes-gke/blob/master/docs/3-build-cluster.md)
+If you closed the Kuberentes Dashboard, follow the instructions to open Dashboard [here](https://github.com/apprenda/hands-on-with-kubernetes-azure/blob/master/docs/3-build-cluster.md)
 
 ## 5. Find the port and external IP
 

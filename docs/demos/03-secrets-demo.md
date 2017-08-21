@@ -4,12 +4,12 @@ Secrets are a way to store sensitive information in Kubernetes.
 
 The relevant Kubernetes documentation is found [here](https://kubernetes.io/docs/concepts/configuration/secret/)
 
-These steps are to be executed in the Google Cloud Shell. 
+These steps are to be executed in the Azure Cloud Shell. 
 
 ## 1. Navigate to the Workshop Directory (if necessary)  
 
 ```
-cd hands-on-with-kubernetes-gke
+cd hands-on-with-kubernetes-azure
 ```
 
 ## 2. Deploy a Kubernetes Secret
@@ -34,7 +34,7 @@ You should now see
 
 ```
 NAME              READY     STATUS    RESTARTS   AGE       IP               NODE
-secret-test-pod   1/1       Running   0          13s       172.16.235.215   worker1
+secret-test-pod   1/1       Running   0          13s       172.16.235.215   k8s-agent-d7ca55cc-0
 ```
 
 ## 5. Obtain the Logs From the Pod

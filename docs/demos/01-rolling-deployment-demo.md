@@ -6,12 +6,12 @@ We will see two ways of creating a service so that you become familiar with kube
 
 Relevant Kubernetes documentation is found [here](https://kubernetes.io/docs/concepts/workloads/controllers/deployment/). Instructors will cover "Writing a Deployment Spec." 
 
-You will perform these steps in the Google Cloud Shell.
+You will perform these steps in the Azure Cloud Shell.
 
 ## 1. Navigate to the Workshop Directory (if necessary)  
 
 ```
-cd hands-on-with-kubernetes-gke
+cd hands-on-with-kubernetes-azure
 ```
 
 ## 2. Deploy an Initial Version 1.0 of the App
@@ -62,7 +62,7 @@ Find the external IP
 kubectl get services kdemo-svc
 ```
 
-Initially you will see something like this while the Google Load Balancer allocates an external IP address
+Initially you will see something like this while the Azure Load Balancer allocates an external IP address
 
 ```
 root@bootstrap-node:~/hands-on-with-kubernetes-workshop# kubectl get services
