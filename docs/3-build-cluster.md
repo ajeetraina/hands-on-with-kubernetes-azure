@@ -67,7 +67,7 @@ kubectl cluster-info
 In order to access the Kubernetes dashboard via the Internet, we need to update it's configuration from NodePort to LoadBalancer. Edit the Service configuration by running the following command to open the definition, then change the Type from NodePort to LoadBalancer, save and exit. 
 
 ```
-kubectl edit service/kubernetes-dashboard -n kube-system
+kubectl edit services/kubernetes-dashboard -n kube-system
 ```
 
 After the change has been applied, run the following command until the External IP has a value (instead of pending). This command will watch the result and output any changes (it may take some time). Once the IP has been populated, hit Ctrl + C to exit the watch. 
