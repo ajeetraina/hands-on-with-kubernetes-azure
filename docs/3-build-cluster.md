@@ -89,3 +89,5 @@ Open your browser and go to http://localhost:8001/ui to see the Dashboard for yo
 Instructor will give a tour of the Kubernetes Dashboard and cover the constructs of Kubernetes. 
 
 They will then cover the demo apps found here https://github.com/apprenda/hands-on-with-kubernetes-azure/tree/master/docs/demos
+
+Reference for joining a kubernetes cluster via ACS: https://docs.microsoft.com/en-us/azure/container-service/kubernetes/container-service-connect#connect-to-a-kubernetes-cluster
