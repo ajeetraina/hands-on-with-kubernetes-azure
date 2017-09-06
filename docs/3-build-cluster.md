@@ -1,6 +1,6 @@
 # Build the Kubernetes Cluster
 
-In this section, you will find code blocks with commands  for you to copy & paste into the Azure Cloud Shell (remote terminal window). We have excluded the command prompt itself (the dollar sign `$`) from the snippets. 
+In this section, you will find code blocks with commands  for you to copy & paste into the command line interface of your choice. We have excluded the command prompt itself (the dollar sign `$`) from the snippets. 
 
 **Tips for those who have not used a command line in ages**
 
@@ -12,15 +12,21 @@ To copy from the terminal window, simply highlight the desired text and it will 
 
 ## 1. Sign In To Azure
 
-Navigate to the Azure Cloud portal: https://portal.azure.com
+For this workshop we will use the Azure CLI 2.0.  Here are the directions to install for your operating system: https://docs.microsoft.com/en-us/cli/azure/install-azure-cli?view=azure-cli-latest  
 
-For this workshop we will use the web-based terminal window, Azure Cloud Shell, to avoid differences between operating systems and personal configurations. 
+To verify the download worked correctly, type az in the command line and you should see a help screen response.
 
-Open the Azure Cloud Shell which is located on the top navigation bar with the following icon >_
+Run the following command to login
+```
+az login
+```
+Copy the link from the response into a browser and enter in the authentication token (also in the response).
+
+You will then be asked to enter in credentials after you enter the code in the browser - use the account you created earlier.
 
 ## 2. Clone the Workshop Git Repository
 
-Clone the following GitHub repo into the Cloud Shell to get local access to the workshop demo files
+Go back to the command line and clone the following GitHub repo into the folder of your choice to get local access to the workshop demo files
 
 ```
 git clone https://github.com/apprenda/hands-on-with-kubernetes-azure 
@@ -39,6 +45,10 @@ cd hands-on-with-kubernetes-azure
 Run the following command to create a 3-node Kubernetes cluster in the Azure Container Service (ACS). This may take a minute to respond and will run for several minutes while the cluster is provisioned.
 
 NOTE: In order to not go over the free tier limits, we are only provisioning 1 agent node. 
+
+NOTE: If you signed up using a token from a Microsoft representative you may have to use a different location.
+
+NOTE: Here is link that shows the list of supported regions that can use the Container Service: https://azure.microsoft.com/en-us/regions/services/
 
 ```
 az group create --name myResourceGroup --location eastus2
@@ -64,22 +74,20 @@ Now verify that `kubectl` can connect to the cluster
 kubectl cluster-info
 ```
 
-In order to access the Kubernetes dashboard via the Internet, we need to update it's configuration from NodePort to LoadBalancer. Edit the Service configuration by running the following command to open the definition, then change the Type from NodePort to LoadBalancer, save and exit. 
+In order to access the Kubernetes dashboard via the Internet, we need to run a proxy from your machine. You will need to open another command line window after this step becuause it will continue to run as long as you want to access the kubernetes ui.  
+
+NOTE: This is currently a limitation of the Azure Container Service as we are not allowed to edit the service configuration for the kubernetes ui directly.
 
 ```
-kubectl edit services/kubernetes-dashboard -n kube-system
+kubectl proxy
 ```
 
-After the change has been applied, run the following command until the External IP has a value (instead of pending). This command will watch the result and output any changes (it may take some time). Once the IP has been populated, hit Ctrl + C to exit the watch. 
-
-```
-kubectl get svc kubernetes-dashboard -n kube-system --watch
-```
-
-Open your browser and go to http://EXTERNALIP to see the Dashboard for your Cluster. 
+Open your browser and go to http://localhost:8001/ui to see the Dashboard for your Cluster. 
 
 ## 5. Tour of Dashboard (the official UI of Kubernetes)
 
 Instructor will give a tour of the Kubernetes Dashboard and cover the constructs of Kubernetes. 
 
 They will then cover the demo apps found here https://github.com/apprenda/hands-on-with-kubernetes-azure/tree/master/docs/demos
+
+Reference for joining a kubernetes cluster via ACS: https://docs.microsoft.com/en-us/azure/container-service/kubernetes/container-service-connect#connect-to-a-kubernetes-cluster
